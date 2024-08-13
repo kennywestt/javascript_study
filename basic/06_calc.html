@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>06_calc</h1>
+    <script>
+        document.write("<h2>산술 연산자</h2>")
+        /*
+            항 : 숫자(+,=,*,/,%), 문자, boolean(+)
+            결과 : 숫자           문자
+        */
+        var a = 15, b = 7
+        
+        document.write("a = 15, b = 7")
+        document.write("<br>")
+        document.write("a + b = ",a + b)
+        document.write("<br>")
+        document.write("a - b = ",a - b)
+        document.write("<br>")
+        document.write("a x b = ",a * b)
+        document.write("<br>")
+        document.write("a / b = ", a / b)
+        document.write("<br><br>")
+
+        a ='장동건', b = '장서건'
+        document.write("a = '장동건', b = '장서건'")
+        document.write("<br>")
+        document.write("a + b = ",a + b)
+        document.write("<br>")
+        document.write("a - b = ",a - b)
+        document.write("<br>")
+        document.write("a x b = ",a * b)
+        document.write("<br>")
+        document.write("a / b = ", a / b)
+        document.write("<br><br>")
+
+        a =100, b = '장서건'
+        document.write("a = 100, b = '장서건'")
+        document.write("<br>")
+        document.write("a + b = ",a + b)
+        document.write("<br>")
+        document.write("a - b = ",a - b)
+        document.write("<br>")
+        document.write("a x b = ",a * b)
+        document.write("<br>")
+        document.write("a / b = ", a / b)
+        document.write("<br><br>")
+
+        a =false, b = true
+
+        document.write("a = false, b = true")
+        document.write("<br>")
+        document.write("a + b = ",a + b)
+        document.write("<br>")
+        document.write("a - b = ",a - b)
+        document.write("<br>")
+        document.write("a x b = ",a * b)
+        document.write("<br>")
+        document.write("a / b = ", a / b)
+        document.write("<br><br>")
+
+        a =15, b = 7
+        document.write("a=15, b=7" + "<br>")
+        document.write("a + b = ",a + b + "<br>")
+        document.write("a - b = ",a - b + "<br>")
+        document.write("a * b = ",a * b + "<br>")
+        document.write("a / b = ",a / b + "<br>")
+        document.write("a % b = ",a % b + "<br><hr>")
+
+        document.write("<h2>비교 연산자</h2>")
+        /*
+            항 : 숫자, 문자, boolean(>,>=,<=,<,==,!=), 다른 자료형(==, !=_)
+            결과 : boolean  true : 1, false : 0
+
+            문자 : a < z, A < a, ㄱ < ㅎ, ㅏ < ㅣ
+                    비교순서 : 초성, 중성, 종성
+        */
+
+        a = 20; b = 10
+        document.write("a = 20; b = 10")
+        document.write("<br><br>")
+        document.write("a > b ", a > b)
+        document.write("<br>")
+        document.write("a >= b ", a >= b)
+        document.write("<br>")
+        document.write("a <= b ", a <= b)
+        document.write("<br>")
+        document.write("a < b ", a < b)
+        document.write("<br>")
+        document.write("a == b ", a == b)
+        document.write("<br>")
+        document.write("a != b ", a != b)
+        document.write("<hr>")
+
+        a = "장동건"; b = "장서건"
+        document.write("a = '장동건'; b = 장서건")
+        document.write("<br><br>")
+        document.write("a > b ", a > b)
+        document.write("<br>")
+        document.write("a >= b ", a >= b)
+        document.write("<br>")
+        document.write("a <= b ", a <= b)
+        document.write("<br>")
+        document.write("a < b ", a < b)
+        document.write("<br>")
+        document.write("a == b ", a == b)
+        document.write("<br>")
+        document.write("a != b ", a != b)
+        document.write("<hr>")
+
+        a="A", b = "a"
+        document.write("a = 'A'; b = 'a'")
+        document.write("<br><br>")
+        document.write("a > b ", a > b)
+        document.write("<br>")
+        document.write("a >= b ", a >= b)
+        document.write("<br>")
+        document.write("a <= b ", a <= b)
+        document.write("<br>")
+        document.write("a < b ", a < b)
+        document.write("<br>")
+        document.write("a == b ", a == b)
+        document.write("<br>")
+        document.write("a != b ", a != b)
+        document.write("<hr>")
+
+        a = 97; b = "a"
+        document.write("a = 97; b = 'a'")
+        document.write("<br><br>")
+        document.write("a > b ", a > b)
+        document.write("<br>")
+        document.write("a >= b ", a >= b)
+        document.write("<br>")
+        document.write("a <= b ", a <= b)
+        document.write("<br>")
+        document.write("a < b ", a < b)
+        document.write("<br>")
+        document.write("a == b ", a == b)
+        document.write("<br>")
+        document.write("a != b ", a != b)
+        document.write("<hr>")
+
+
+        a = true; b = false;
+        document.write("a = true; b = false")
+        document.write("<br><br>")
+        document.write("a > b ", a > b)
+        document.write("<br>")
+        document.write("a >= b ", a >= b)
+        document.write("<br>")
+        document.write("a <= b ", a <= b)
+        document.write("<br>")
+        document.write("a < b ", a < b)
+        document.write("<br>")
+        document.write("a == b ", a == b)
+        document.write("<br>")
+        document.write("a != b ", a != b)
+        document.write("<hr>")
+
+        a = 20; b = 10
+        document.write(a +" > " + b + " : " + (a > b) + "<br><hr>" )
+
+        /*
+            ()
+            *, /, %
+            +, -
+            비교
+        */
+
+        document.write("<h2>논리 연산자</h2>")
+        /*
+            항 :boolean
+            결과 : boolean
+
+            and &&  : A && B - A, B 모두 true인 경우 true
+            or ||   : A || B - A, B 둘 중 한개 이상이 true인 경우 true
+
+                     true            false
+            문자 :  '내용', ''         '', ""
+            숫자 :  0 제외              0
+        */
+
+        a = true; b = true;
+        document.write("a = true; b = true")
+        document.write("<br><br>")
+        document.write("a && b ", a && b)
+        document.write("<br>")
+        document.write("a || b ", a || b)
+        document.write("<br><hr>")
+
+        a = false; b = false;
+        document.write("a = false; b = false")
+        document.write("<br><br>")
+        document.write("a && b ", a && b)
+        document.write("<br>")
+        document.write("a || b ", a || b)
+        document.write("<br><hr>")
+
+        a = true; b = false;
+        document.write("a = true; b = false")
+        document.write("<br><br>")
+        document.write("a && b ", a && b)
+        document.write("<br>")
+        document.write("a || b ", a || b)
+        document.write("<br><hr>")
+
+        a = '아기상어'; b = ''
+        document.write("a = '아기상어'; b = ''")
+        document.write("<br><br>")
+        document.write("a && b ", a && b)
+        document.write("<br>")
+        document.write("a || b ", a || b)
+        document.write("<br><hr>")
+
+        a = '아기상어'; b = false
+        document.write("a = '아기상어'; b = 'false'")
+        document.write("<br><br>")
+        document.write("a && b ", a && b)
+        document.write("<br>")
+        document.write("a || b ", a || b)
+        document.write("<br><hr>")
+
+        a = '아기상어'; b = 0
+        document.write("a = '아기상어'; b = 0")
+        document.write("<br><br>")
+        document.write("a && b ", a && b)
+        document.write("<br>")
+        document.write("a || b ", a || b)
+        document.write("<br><hr>")
+
+        var age = 24, color = '빨강'
+        // var ageChk = age <= 25
+        // var colorChk = color == "빨강"
+        // document.write('And : ' + (ageChk && colorChk) +"<br>")
+        // document.write('Or : ' + ageChk || colorChk +"<br>")
+
+        document.write('And : ' + (age <= 25 && color =='빨강') +"<br>")
+        document.write('Or : ' + (age <= 25 || color =='빨강') +"<br>")
+
+        document.write("<h2>비트 연산자</h2>")
+        /*
+            항 : 숫자
+            결과 : 숫자
+
+            AND &&  : A & B - A, B 모두 true인 경우 true
+            OR  ||  : A | B - A, B 둘 중 한개 이상이 true인 경우 true
+            XOR ^   : A ^ B - A, B 가 다르면 true
+        */
+
+        a = 5; b = 6
+
+    /*
+        5 : 0101(2)
+        6 : 0110(2)
+
+
+
+            0101
+        &   0110
+        --------------
+            0110        -- 십진수로 4임
+
+
+            0101
+        |   0110
+        --------------
+            0111        -- 십진수로 7임
+
+            0101
+        ^   0110
+        --------------
+            0011        -- 십진수로 3임
+    */
+
+        document.write(a & b)
+        document.write("<br>")
+        document.write(a | b)
+        document.write("<br>")
+        document.write(a ^ b)
+        document.write("<br><hr>")
+
+        /* 16진수
+         0,1,2,3,4,5,6,7,8,9,
+         A(10),B(11),C(12),D(13),E(14),F(15)
+        */
+
+        document.write("<h2>shift 연산자</h2>")
+        /*
+            항 : 숫자
+            결과 : 숫자
+
+            << : 왼쪽 shift 자리밀기
+            6 << 2
+            0110 << 2
+            0110  00
+            01 1000
+                16 + 8 = 24
+
+
+            >> : 오른쪽 shift 자리밀기
+
+            6 >> 2
+            0110 >> 2
+            00  0110
+            0001 10
+                - 삭제
+            0001 ㅡㅡㅡ> 1
+
+            -6 >> 2     -2
+            -6 >>> 2    1073741822
+
+        */
+       document.write(6 >> 2)
+       document.write("<br>")
+       document.write(6 << 2)
+       document.write("<br>")
+       document.write(-6 >> 2)
+       document.write("<br>")
+       document.write(-6 >>> 2)
+
+
+
+    </script>
+</body>
+</html>
