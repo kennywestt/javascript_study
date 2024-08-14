@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>06_mulFor</title>
+</head>
+<body>
+    <h1>06_mulFor</h1>
+    <script>
+        for(let h = 1; h <= 12; h++){
+            document.write("<h3>", h, "시</h3>")
+                for(let m = 1; m < 60; m++){
+                    document.write(h,"시 ",m,"분","<br>")
+                }
+    //document.write(h," : ",m,"<br>") m의 타입은 let이므로 블록밖에서 사용X
+        }
+
+        document.write("문제1")
+        result = 0
+        for(let i = 1; i <=9; i++){
+            document.write(i, "단<br>")
+            for(let j = 1; j <=9; j++){
+                result = i * j
+                document.write(i,'x',j, '=',result, "<br>")
+            }
+        }
+        document.write("<hr>")
+        document.write("문제2")
+    
+
+        result = 0
+        for(i=1; i <=9; i++){
+            result = i * j
+            document.write(i, "x", j, "=", result )
+            for( j=2; j <=9; j++){
+                document.write(j, "x", i)
+            }
+        }
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>03_switch</title>
+</head>
+<body>
+    <h1>03_switch</h1>
+    <script>
+/*
+        switch - 값에 의한 분기
+        case 구간 순서대로 작성하지 않아도 됨
+        break - 현재 구간 탈출
+        값 - 정수, 실수, boolean, string 모두 가능
+        default - 기본값
+*/
+
+
+        switch(20){ // 찾고자 하는 값 : 20
+            case 30:
+                document.write("30입니다. <br>")
+            case 10:
+                document.write("10입니다. <br>")
+            case 20:    // 동일한 값이 있는 case로 이동
+                document.write("20입니다. <br>")
+            case 40:
+                document.write("40입니다. <br>")
+            case 30:
+                document.write("30입니다.2 <br>")
+        }
+        document.write("switch 종료 1----------<br>")
+
+        switch(40){
+            case 30:
+                document.write("30입니다. <br>")
+                break
+            case 10:
+                document.write("10입니다. <br>")
+                break
+            case 20:
+                document.write("20입니다. <br>")
+                break
+            case 40:
+                document.write("40입니다. <br>")
+                break
+            case 30:
+                document.write("30입니다.2 <br>")
+                break
+        }
+        document.write("switch 종료 2----------<br>")
+
+        switch(10){
+            case 30:
+                document.write("30입니다. <br>")
+                break
+            case 10:
+                document.write("10입니다. <br>")
+                break
+            case 50:
+                document.write("50입니다. <br>")
+                break
+        }
+        document.write("switch 종료 3----------<br>")
+
+        // default
+        switch(10){
+            case 30:
+                document.write("30입니다. <br>")
+                break
+            case 10:
+                document.write("10입니다. <br>")
+                break
+            default: // case에 없는 기본 값 처리 (else 기능과 같음)
+                document.write("기본값입니다. <br>")
+                break
+            case 50:
+                document.write("50입니다. <br>")
+                break
+        }
+        document.write("switch 종료 4----------<br>")
+
+        var basic = 300, grade = "부장"
+        var bonus
+        switch(grade){
+            case "부장":
+                bonus = 0.5
+            break
+
+            case "과장":
+                bonus = 0.3
+            break
+
+            case "대리":
+                bonus = 0.2
+            break
+
+            case "사원":
+                bonus = 0.1
+            break
+            
+            default:
+                bonus = 0
+        }
+        var money = basic + basic * bonus
+        document.write(money+"<br><br>")
+
+
+
+        var coffee1 ='아프리카노'
+        var coffee2 = '아시아노'
+        var coffee3 = '아메리카노'
+        var americano = 2000
+        var asiano = 3000
+        var africano = 4000
+        var shot = 3
+        var afriMoney
+        var asiMoney
+        var ameMoney
+
+        switch(coffee1,coffee2,coffee3){
+            case '아메리카노':
+            ameMoney = americano * shot
+            
+            case '아시아노':
+            asiMoney = asiano * shot
+            
+            case '아프리카노':
+            afriMoney = africano * shot
+            
+        }
+
+        document.write('커피종류 : ' + coffee3 +"<br>")
+        document.write('잔수 : ' + shot +"<br>")
+        document.write('아메리카노 3잔 : '+ ameMoney +"<br><br>")
+
+        document.write('커피종류 : ' + coffee2 +"<br>")
+        document.write('잔수 : ' + shot +"<br>")
+        document.write('아시아노 3잔 : '+ asiMoney +"<br><br>")
+        
+        document.write('커피종류 : ' + coffee1 +"<br>")
+        document.write('잔수 : ' + shot +"<br>")
+        document.write('아프리카노 3잔 : '+ afriMoney +"<br><br>")
+
+    </script>
+</body>
+</html>

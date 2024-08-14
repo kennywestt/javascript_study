@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>01_if</title>
+</head>
+<body>
+    <h1>01_if</h1>
+    <script>
+        /*
+
+        */
+
+        if(1) {
+            document.write("if 참이지롱1<br>")
+            document.write("if 참이지롱1<br>")
+            document.write("if 참이지롱1<br>")
+        }
+        document.write("종료1<br>")
+        if(0){
+            document.write("if 참이지롱2<br>") //이하 1개 구문만 if문에 종속
+            document.write("if 참이지롱2<br>")
+            document.write("if 참이지롱2<br>")
+        }
+        document.write("종료2<br><br>")
+
+
+        if(1){
+            document.write("if~else 참이지롱1<br>")
+        }else{
+            document.write("if~else 거짓부렁1<br>")
+        }
+        document.write("if~else 종료 1-----------------<br><br>")
+
+        var jum = 62
+
+        if(jum>80){
+            document.write("80점 이상입니다.<br>")
+        }
+        else if(jum>60){
+            document.write("60점 이상입니다.<br>")
+            if(jum % 2){
+                document.write("홀수 <br>")
+            }else{
+                document.write("짝수 <br>")
+            }
+        }
+        else if(jum>40){
+            document.write("40점 이상입니다.<br>")
+        }
+        else{
+            document.write("40점 미만입니다.<br>")
+        }
+
+    </script>
+</body>
+</html>

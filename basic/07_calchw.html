@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 연산자를 이용하여 국어, 영어, 수학 평균, 총점, 성적을 출력
+
+        var kook = 80
+        var eng = 70
+        var math = 50
+        var total = kook + eng + math
+        var average = total / 3
+        // var avg3 = (total - total % 3) / 3 정수형
+        // average2 = total /asd
+
+        var res = average >= 90 ? "수" :
+                  average >= 80 ? "우" :
+                  average >= 70 ? "미" :
+                  average >= 60 ? "양" : "가"
+        document.write("성적은 : " + res + "<br>총점은 : "+ total +"<br>평균은 : " + average + "입니다.")
+
+
+
+        var averageInt = average % 3 == 0 ? average : average-(average % 3)
+        document.write("<br>")
+        document.write("정수 평균은 " + averageInt +"<br><br>")
+
+        /* -------------------------------------------------------------------- */
+        // if문을 이용하여 평균등급을 수우미양가로 출력하세요
+        // 단 등급이 '우' 일 경우 모든 과목 점수가 80 이상리마녀 '균등'을 추가해서 출력
+        var kor = 83
+        var eng = 85
+        var math = 87
+        var total = kor + eng + math
+        var average = total / 3
+
+        document.write("나의 성적은<br>")
+        if(average >= 90){
+            document.write("수<br>")
+            if(kor>=80 && eng>=80 && math>=80){
+                document.write("균등0<br>")
+            }else{
+                document.write("균등x<br>")
+            }
+        }
+        else if(average >= 80){
+            document.write("우<br>")
+            if(kor>=80 && eng>=80 && math>=80){
+                document.write("균등0<br>")
+            }else{
+                document.write("균등x<br>")
+            }
+        }
+        else if(average >= 70){
+            document.write("미<br>")
+        }
+        else if(average >= 60){
+            document.write("양<br>")
+        }
+        else{
+            document.write("가<br>")
+        }
+
+    </script>
+</body>
+</html>

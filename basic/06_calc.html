@@ -165,7 +165,9 @@
         document.write(a +" > " + b + " : " + (a > b) + "<br><hr>" )
 
         /*
+        우선수윈
             ()
+            ++/--
             *, /, %
             +, -
             비교
@@ -321,7 +323,184 @@
        document.write(-6 >> 2)
        document.write("<br>")
        document.write(-6 >>> 2)
+       document.write("<br><hr>")
 
+       // 1항 연산자
+       document.write("<h2>1항 연산자</h2>")
+        /*
+                param            ret
+            1 : boolean !true   false
+            - : 숫자             -5
+        ++/-- : 숫자
+        */
+
+        var c = true
+        document.write("두번째 줄는 not(!)를 쓸 경우")
+        document.write("<br>")
+
+
+        document.write("var c = true <br>")
+        document.write("<br>")
+        document.write(c)
+        document.write("<br>")
+        document.write(!c)
+        document.write("<br><br>")
+
+        c = 123
+        document.write("var c = 123")
+        document.write("<br>")
+        document.write(c)
+        document.write("<br>")
+        document.write(!c)
+        document.write("<br><br>")
+
+        c = 0
+        document.write("var c = 0")
+        document.write("<br>")
+        document.write(c)
+        document.write("<br>")
+        document.write(!c)
+        document.write("<br><br>")
+
+        c = '아기상어'
+        document.write("var c = '아기상어'")
+        document.write("<br>")
+        document.write(c)
+        document.write("<br>")
+        document.write(!c)
+        document.write("<br><br>")
+
+        c = -5
+        document.write("var c = -5")
+        document.write("<br>")
+        document.write(c)
+        document.write("<br>")
+        document.write(!c)
+        document.write("<br><br>")
+
+        c = 5
+        document.write("var c = 5")
+        document.write("<br>")
+        document.write(c)
+        document.write("<br>")
+        // c = c + 1
+        document.write("c++ 한 경우")
+        document.write("<br>")
+        c++
+        document.write(c)
+        document.write("<br>")
+        document.write("c-- 한 경우")
+        document.write("<br>")
+        c--
+        document.write(c)
+        document.write("<br><br>")
+        //c**
+        //c//
+        //c%%
+
+        document.write("<h2>이항 연산자</h2>")
+        ++c     // 전치연산
+        document.write(c)
+        document.write("<br>")
+        c=10
+        document.write(c++) // 호출 --> 후치연산
+        document.write("<br>")
+        document.write(c)
+        document.write("<br>")
+
+        c=20
+        document.write(++c) // 호출 --> 전치연산 후 호출
+        document.write("<br>")
+        document.write(c)
+        document.write("<br><br>")
+
+        var aa = 5, bb = 6, cc = 10
+        var dd = aa++ + ++cc - bb-- * --aa + aa++
+        document.write("var aa = 5, bb = 6, cc = 10")
+        document.write("<br>")
+        document.write("var dd = aa++ + ++cc - bb-- * --aa + aa++ 를 구해라")
+        document.write("<br>")
+        document.write("aa = "+ aa)
+        document.write("<br>")
+        document.write("bb = "+ bb)
+        document.write("<br>")
+        document.write("cc = "+ cc)
+        document.write("<br>")
+        document.write("dd = "+ dd)
+        document.write("<br><br><hr>")
+        
+
+        document.write("<h2>복합 대입 연산자</h2>")
+        /*
+            항 : 숫자
+            결과 : 숫자
+        */
+       a = 5
+       document.write("// a = 5 //")
+       document.write("<br>")
+       document.write(a)
+       document.write("<br>")
+       a = a + 3
+       document.write("// a = a + 3 //")
+       document.write("<br>")
+       document.write(a)
+       document.write("<br>")
+
+       a -= 2
+       document.write("// a -= 2//")
+       document.write("<br>")
+       document.write(a)
+       document.write("<br>")
+
+       a *= 5
+       document.write("// a *= 5 //")
+       document.write("<br>")
+       document.write(a)
+       document.write("<br>")
+
+       a /= 2
+       document.write("// a /= 2 //")
+       document.write("<br>")
+       document.write(a)
+       document.write("<br>")
+
+        // 조건 연산자
+       document.write("<h2>조건 연산자</h2>")
+       document.write("<br>")
+        /*
+            boolean ? true 값 false 값
+        */
+        document.write('true ? "참이지롱" : 123')
+        document.write("<br>")
+        document.write(true ? "참이지롱" : 123)
+        document.write("<br><br>")
+        document.write('false ? "참이지롱" : 123')
+        document.write("<br>")
+        document.write(false ? "참이지롱" : 123)
+        document.write("<br><br>")
+
+        var jum = 88
+        document.write("var jum = 88")
+        document.write("<br>")
+        var res = jum >= 80 ? "합격" : "불합격"
+        document.write('var res = jum >= 80 ? "합격" : "불합격"')
+        document.write("<br>")
+        document.write(res)
+        document.write("<br>")
+
+        var jum = 58
+        document.write("var jum = 78")
+        document.write("<br>")
+
+        // 순차 처리를 잘해야 조건에 맞는다. 80 > 60 > 40
+        var res = jum >= 80 ? "우수" :
+                  jum >= 60 ? "양호" :
+                  jum >= 40 ? "정상" : "미달"
+        document.write('var res = jum >= 80 ? "합격" : "불합격"')
+        document.write("<br>")
+
+        document.write(res)
+        document.write("<br>")
 
 
     </script>

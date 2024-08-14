@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>08_forScope</title>
+</head>
+<body>
+    <h1>08_forScope</h1>
+    <script>
+
+        let a = 100
+        for(let i = 0; i < 3; i++){
+            //let i 반복변수 : 구간 반복할지라도 최초 선언 후 소멸되지 않고 유지
+                //for문 탈출시 소멸
+
+            let j = 10 // 내부변수 : 구간 반복마다 선언, 소멸 반복
+            var k = 20 // 외부변수 : 구간 반복마다 선언 --> 재 초기화
+
+            a++
+            j++
+            k++
+
+            document.write("for 1 : ", i, ", " , j, ", " , a, ", " , k, "<br>")
+        }
+        document.write("for 1 종료", a ,", ", k, "--------</br><hr>")
+
+
+        let b = 200
+        for( ;b <400; b+=100){ // 반복 변수를 외부변수로 사용
+            document.write("for 2 : ", b , "<br>")
+        }
+        document.write("for 2 종료 ",b, "--------<br><hr>")
+
+        let c = 300
+        for(c=100; c<400; c+=100){ // 초기값 대입
+            document.write("for 3 : ", c , "<br>")
+        }
+        document.write("for 3 종료 ",c, "--------<br><hr>")
+
+        let d = 300
+        for(d; d<400; d+=100){ // 초기값 대입
+            document.write("for 4 : ", d , "<br>")
+        }
+        document.write("for 4 종료 ",d, "--------<br><hr>")
+
+        for(var e=10; e<50; e+=10){ // 반복변수를 var로 선언 : 외부변수로 선언
+            document.write("for 5 : ", e , "<br>")
+        }
+        // 반복문 이후에도 외부변수로 사용
+        document.write("for 5 종료 ",e, "--------<br><hr>")
+
+
+
+        // *반복변수 - 내부변수* 중첩될때
+        for(let f = 0; f < 3; f++){
+            //let f 반복변수
+
+            /* document.write("for 6 시작: ", f, "<br>")
+               f를 내부변수로 인지 -- 선언 전으로 해석 == 에러발생 */
+
+            let j = 10 // 내부변수 : 구간 반복마다 선언, 소멸 반복
+            let f = 1234    // 반복변수와 내부변수 중첩가능 - 내부 > 반복
+
+            document.write("for 6 : ", f, ", " , j, "<br>")
+        }
+        document.write("for 6 종료--------</br><hr>")
+        // *반복변수 - 내부변수* 중첩될때
+
+
+
+        // *외부변수 - 내부변수* 중첩될때
+        let g = 456
+        for(let g = 0; g < 3; g++){
+
+
+            document.write("for 7 : ", g, "<br>")
+        }
+        // 외부변수 g 호출
+        document.write("for 7 종료",g,"--------</br><hr>")
+        // *외부변수 - 내부변수* 중첩될때
+
+
+
+
+        // 문제1)  3, 6, 9 게임을 구현하세요
+        for(let z =1; z<=20; z++){
+            if(z%1 == 3 || z%1 == 6 || z%1 == 9 ||
+               z%10 == 3 || z%10 == 6 || z%10 == 9){
+                document.write(" 짝")
+            }
+            else{
+                document.write(" ",z)
+            }
+        }
+        document.write("<br><br><hr>")
+
+
+
+        // 문제2)   1부터 100까지
+        for(let k =1; k<=100; k++){
+            if(k%1 == 3 || k%1 == 6 || k%1 == 9 ||
+               k%10 == 3 || k%10 == 6 || k%10 == 9){
+                document.write(" 짝<br>")
+            }
+            else{
+                if(k%1 == 3 || k%1 == 6 || k%1 == 9 ||
+                   k%10 == 3 || k%10 == 6 || k%10 == 9 &&
+                   100%k == 0){
+                    document.write(" 짝<br>")
+                }
+                document.write(" ",k, "<br>")
+            }
+        }
+
+
+        // for(let k =1; k<=100; k++){
+        //     if(k%1 == 3 || k%1 == 6 || k%1 == 9 ||
+        //        k%10 == 3 || k%10 == 6 || k%10 == 9  && 100%k == 0){
+        //         document.write(" 짝<br>")
+        //     }
+        //     else{
+        //         document.write(" ",k, "<br>")
+        //     }
+        // }
+
+        // 1번
+        document.write("<br>")
+        document.write("<h2> 1번 </h2>")
+        for(let line = 0; line < 5; line++){
+            for(let star = 0; star <= line; star++){
+                document.write("*")
+            }
+            document.write("<br>")
+        }
+
+        // 2번
+        document.write("<h2> 2번 </h2>")
+        for(let a = 0; a < 5; a++){
+            for(let b = 4; a <= b; b--){
+                document.write("*")
+            }
+            document.write("<br>")
+        }
+
+        // 3번
+        document.write("<h2> 3번 </h2>")
+        for(let d = 1; d <= 5; d++){
+            for(let e = 0; e < 5-d; e++){
+                document.write("&nbsp")
+            }
+            for(let f = 0; f < d; f++){
+                document.write("*")
+            }
+            document.write("<br>")
+        }
+
+        // document.write("<h2> 3번 </h2>")
+        // for(let d = 1; d <= 5; d++){
+        //     for(let e = 0; e < 5-d; e++){
+        //         document.write("&nbsp")
+        //     }
+        //     for(let f = 0; f < d; f++){
+        //         document.write("*")
+        //     }
+        //     document.write("<br>")
+        // }
+
+        // 4번
+        document.write("<h2> 4번 </h2>")
+        for(let d = 5; d > 0; d--){
+            for(let e = 0; e < 5-d; e++){
+                document.write("&nbsp")
+            }
+            for(let f = 0; f < d; f++){
+                document.write("*")
+            }
+            document.write("<br>")
+        }
+
+        // 5번
+        // document.write("<h2> 5번 </h2>")
+        // for(let i = 1; i <=5; i+=2){
+        //     for(let )
+        //     document.write("*")
+        // }
+        
+
+
+
+        
+
+    </script>
+</body>
+</html>
