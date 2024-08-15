@@ -184,7 +184,22 @@
         //     for(let )
         //     document.write("*")
         // }
-        
+
+        document.write("<h2> 4번 </h2>")
+        for (let line = 0; line < 5; line++) {
+            for (let star = 0; star <= line; star++) {
+                document.write("*");
+            }
+            for (let e = 0; e < 5 - d; e++) {
+                document.write("&nbsp;");
+            }
+            for (let f = 0; f < d; f++) {
+                document.write("*");
+            }
+            document.write("<br>");
+            document.write("<br>");
+        }
+
 
 
 
