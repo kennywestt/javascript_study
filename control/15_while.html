@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>15_while</title>
+</head>
+<body>
+    <h1>15_while</h1>
+    <script>
+
+        let num = 2   // 소수 초기값
+        while(num <= 50){   // 조건
+            let i = 2 // 판별 값
+            let prime = true // false 기본값
+            while(i<num) {
+                 if(num % i ==0){
+                 prime = false }
+                 i++
+            }
+                if(prime){
+                document.write(num + "<br>")
+                }
+                num++
+
+            }
+            document.write("while 종료------------ <br>")
+
+        /*
+            1 -> 50 까지 prime number 를 출력 while문
+        */
+    </script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>12_joinForm</title>
+    <script>
+        // let mid = "aaa", mpw = "1234"
+
+
+        // for(;;){
+        //     let pid = prompt("아이디")
+
+        //     if(mid != pid){
+        //         alert("아이디가 일치하지 않습니다.")
+        //         continue
+        //     }
+
+        //     let pw = prompt("패스워드")
+
+        //     if(mpw != pw){
+        //         alert("패스워드가 일치하지 않습니다.")
+        //         continue
+        //     }
+
+        //     // console.log(pid)
+        //     alert(pid + "로그인 되었습니다.")
+
+        //     break
+
+        // }
+
+        let xxx = "aaa", dpw = "1111" //장동건
+        let yyy = "bbb", spw = "2222" //장서건
+        let zzz = "ccc", npw = "3333" //장남건
+        let xx = "장동건"
+        let yy = "장서건"
+        let zz = "장남건"
+
+        for(;;){
+            let id = prompt("아이디")
+            if(xxx!=id ||yyy!=id || zzz!=id){
+                alert("아이디가 일치하는게 없습니다.")
+                continue
+            }
+            
+            else{
+            // 아이디
+            if(xxx = id){
+                alert(xx)
+                let pw =prompt("패스워드")
+                if(dpw != pw){
+                alert("패스워드가 일치하지 않습니다.")
+                continue
+            }
+                alert(xx + " 님 로그인 되었습니다.")
+                break
+            }
+            else if(yyy = id){
+                    alert(yy)
+                let pw =prompt("패스워드")
+                if(spw != pw){
+                alert("패스워드가 일치하지 않습니다.")
+                continue
+            }
+                alert(yy + " 님 로그인 되었습니다.")
+                break
+            }
+            else if(zzz = id){
+                    alert(zz)
+                    let pw =prompt("패스워드")
+                    if(npw != pw){
+                alert("패스워드가 일치하지 않습니다.")
+                continue
+            }
+                alert(zz + " 님 로그인 되었습니다.")
+                break
+                }
+            }
+        }
+    
+    
+
+
+
+    </script>
+</head>
+<body>
+    <h1>12_joinForm</h1>
+    
+</body>
+</html>

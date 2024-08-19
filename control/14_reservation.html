@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>14_reservation</title>
+</head>
+<body>
+    <h1>14_reservation</h1>
+    <script>
+     TOT:for(;;){
+        for(;;){
+            let res = prompt("1. 아이언맨 \n 2. 슈퍼맨\n 3. 마트맨\n 4. 다시\n 5. 처음부터\n 0. 전체종료")
+            var movie = ''
+            if(res == '0'){
+                break TOT
+            }else if(res == '1') {
+                movie = "아이어맨"
+                break
+            }else if(res == '2') {
+                movie = "슈퍼맨"
+                break
+            }else if(res == '3') {
+                movie = "마트맨"
+                break
+            }
+        }
+        for(;;){
+            let res = prompt("1~5 : 타임\n 6. 다시 \n 7. 처음부터0. 전체종료")
+            var time =''
+            if(res == '0'){
+                break
+            }else if(res >= '1' && re<='5') {
+                time = res
+                break
+            }else if(res == '7') {
+                continue TOT
+                break
+            }
+        }
+        for(;;){
+            let res = prompt("1~9 : 인원수 \n 10. 다시 \n 11. 처음부터0. 전체종료")
+            var cnt =''
+            if(res == '0'){
+                break
+            }else if(res >= '1' && re<='9') {
+                time = res
+                break
+            }else if(res == '11') {
+                continue TOT
+            }
+        }
+        document.write("영화 선택 : "+ movie+"<br>")
+        document.write("영화 타임 : "+ time+"<br>")
+        document.write("인원 수 : "+ cnt+"<br>")
+        break
+    }
+        document.write("영화 예매 종료")
+
+    </script>
+</body>
+</html>
