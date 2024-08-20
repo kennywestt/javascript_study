@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>02_index</title>
+</head>
+<body>
+    <h1>02_index</h1>
+    <script>
+        let jum =   [89,          65,     91,       54,         78  ]
+        let pname = ["장동건", "장서건", "장남건", "장중건", "북두신건"]
+        
+    </script>
+    <table border="">
+        <tr>
+            <td>번호</td>
+            <td>이름</td>
+            <td>점수</td>
+        </tr>
+        <script>
+            for (const i in jum) {
+                let ttt = "<tr><td>"+i+
+                    "</td><td>"+ pname[i]+
+                    "</td><td>"+jum[i]+
+                    "</td></tr>"
+                document.write(ttt)
+                }
+        </script>
+    </table>
+</body>
+</html>

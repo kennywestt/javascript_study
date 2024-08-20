@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>02_hw</title>
+</head>
+<body>
+    <h1>02_hw</h1>
+    <script>
+        let kor = [77,97,67,87]
+        let eng = [78,98,68,88]
+        let math = [72,92,62,82]
+        let pname = ["이효리", "삼효리", "사효리", "오효리"]
+
+        w=kor[0]+eng[0]+math[0]
+        x=kor[1]+eng[1]+math[1]
+        y=kor[2]+eng[2]+math[2]
+        z=kor[3]+eng[3]+math[3]
+
+        // 총점
+        let score = [w,x, y, z]
+        document.write(score, "<br>")
+
+        // 평균
+        let avg = [w/3, x/3, y/3, z/3]
+        document.write(avg, "<br>")
+
+    </script>
+    <table border="">
+        <tr>
+            <td>이름</td>
+            <td>국어</td>
+            <td>영어</td>
+            <td>수학</td>
+            <td>총점</td>
+            <td>평균</td>
+        </tr>
+        <script>
+            total=0
+            for (const i in pname,score,avg) {
+                    
+                let ttt = "<tr><td>"+pname[i]+
+                    "</td><td>"+kor[i]+
+                    "</td><td>"+eng[i]+
+                    "</td><td>"+math[i]+
+                    "</td><td>"+score[i]+
+                    "</td><td>"+avg[i]
+                    "</td></tr>"
+                document.write(ttt)
+                }
+        </script>
+    </table>
+</body>
+</html>
