@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>04_rank</title>
+</head>
+<body>
+    <h1>04_rank</h1>
+    <script>
+        let jum = [77,55,99,66,88]
+        let pname = ["한가인","두가인","세가인","네가인","오가인"]
+        let rank = new Array()
+
+        // 등수 계산
+        for (const me in jum) { // 내 점수 및 순서
+            rank[me] = 1 // 내 등수 초기화
+
+            for (const you of jum){
+                // document.write(you, "<br>")
+                if(jum[me] < you){  // 내점수 < 비교점수
+                    rank[me] ++ //등위증가
+                }
+            }
+            // document.write(me, " -> ", jum[me], " : ", rank[me], "<br>")
+        }
+
+        // 3. 출력부
+        // 배열 순서대로 출력
+        for (const me in jum){
+            document.write(me, " -> ",pname[me], ' ', jum[me], " : ", rank[me], "<br>")
+        }
+
+        document.write("<hr>")
+
+        // 등위 순서대로 출력
+        for(let r = 1; r<= pname.length; r++) { //출력할 등수
+            // document.write(r, "<br>")
+
+            for(const me in pname){ //학생 데이터
+                if(r==rank[me]){    // 출력하는 등위 : r 현재 돌리고 있는 학생등수 rank
+                    document.write(me, " -> ",pname[me], ' ', jum[me], " : ", rank[me], "<br>")
+                    
+                }
+            }
+        }
+
+
+
+    </script>
+</body>
+</html>

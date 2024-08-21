@@ -1,31 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>02_hw</title>
 </head>
+
 <body>
     <h1>02_hw</h1>
     <script>
-        let kor = [77,97,67,87]
-        let eng = [78,98,68,88]
-        let math = [72,92,62,82]
+        let kor = [77, 97, 67, 87]
+        let eng = [78, 98, 68, 88]
+        let math = [72, 92, 62, 82]
         let pname = ["이효리", "삼효리", "사효리", "오효리"]
+        let rank = new Array()
+        let grade = new Array()  //[수,미,양,가]
 
-        w=kor[0]+eng[0]+math[0]
-        x=kor[1]+eng[1]+math[1]
-        y=kor[2]+eng[2]+math[2]
-        z=kor[3]+eng[3]+math[3]
+        w = kor[0] + eng[0] + math[0]
+        x = kor[1] + eng[1] + math[1]
+        y = kor[2] + eng[2] + math[2]
+        z = kor[3] + eng[3] + math[3]
+
+
+        /* 연산부 */
 
         // 총점
-        let score = [w,x, y, z]
-        document.write(score, "<br>")
+        let score = [w, x, y, z]
+        // document.write(score, "<br>")
 
         // 평균
-        let avg = [w/3, x/3, y/3, z/3]
-        document.write(avg, "<br>")
+        let avg = [w / 3, x / 3, y / 3, z / 3]
+        // document.write(score, "<br>")
 
+        // 등수
+        for (const me in avg) { // 내 점수 및 순서
+            rank[me] = 1 // 내 등수 초기화
+            for (const you of avg) {
+                // document.write(you, "<br>")
+                if (avg[me] < you) {  // 내점수 < 비교점수
+                    rank[me]++ //등위증가
+                }
+            }
+            // document.write(me, " -> ", jum[me], " : ", rank[me], "<br>")
+        }
     </script>
     <table border="">
         <tr>
@@ -37,19 +55,54 @@
             <td>평균</td>
         </tr>
         <script>
-            total=0
-            for (const i in pname,score,avg) {
-                    
-                let ttt = "<tr><td>"+pname[i]+
-                    "</td><td>"+kor[i]+
-                    "</td><td>"+eng[i]+
-                    "</td><td>"+math[i]+
-                    "</td><td>"+score[i]+
-                    "</td><td>"+avg[i]
+            total = 0
+            for (const i in pname, score, avg) {
+
+                let ttt = "<tr><td>" + pname[i] +
+                    "</td><td>" + kor[i] +
+                    "</td><td>" + eng[i] +
+                    "</td><td>" + math[i] +
+                    "</td><td>" + score[i] +
+                    "</td><td>" + avg[i] +
                     "</td></tr>"
                 document.write(ttt)
+            }
+        </script>
+    </table>
+
+    <table border="">
+        <tr>
+            <td>순위</td>
+            <td>이름</td>
+            <td>국어</td>
+            <td>영어</td>
+            <td>수학</td>
+            <td>총점</td>
+            <td>평균</td>
+            <!-- <td>등급</td> -->
+        </tr>
+        <script>
+            document.write("<br><hr>")
+            document.write("<h2>순위로 정렬</h2>")
+            // 등위 순서대로 출력
+            for (let r = 1; r <= score.length; r++) { //출력할 등수
+                for (const me in score) { //학생 데이터
+                    if (r == rank[me]) {    // 출력하는 등위 : r 현재 돌리고 있는 학생등수 rank[me]
+                        let kkk = "<tr><td>" + rank[me] +
+                            "</td><td>" + pname[me] +
+                            "</td><td>" + kor[me] +
+                            "</td><td>" + eng[me] +
+                            "</td><td>" + math[me] +
+                            "</td><td>" + score[me] +
+                            "</td><td>" + avg[me] +
+                            // "</td><td>" + grade[me] +
+                            "</td></tr>"
+                        document.write(kkk)
+                    }
                 }
+            }
         </script>
     </table>
 </body>
+
 </html>
