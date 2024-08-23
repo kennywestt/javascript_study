@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>08_arraypra</title>
+</head>
+
+<body>
+    <h1>08_arraypra</h1>
+    <script>
+        // 1. 입력부
+        let shape = [
+            [5],
+            [5, 6],
+            [5, 6, 8],
+            [10, 4],
+            [8],
+            [10, 6, 13]
+        ]
+
+        let res = [];
+        let kindTitle = ["원", "직사각형", "직각삼각형"];
+
+        // 2. 구현부
+        // 도형의 넓이와 둘레를 출력하세요
+
+        //   도형명             선분                 넓이               둘레
+        //   원               반지름            반지름*반지름*pi    반지름*2*pi
+        //   직사각형       가로, 세로            가로*세로           (가로+세로)*2
+        //   직각삼각형     밑변, 높이, 빗변       밑변*높이/2       밑변+높이+빗변
+        
+        for (const i in shape) {
+            const st = shape[i];
+            // document.write(st,"<br>")
+            let kind = kindTitle[st.length - 1];
+            // document.write(kind,"<br>")
+
+            let area = 0;   // 넓이
+            let dulle = 0;  // 둘레
+
+            if (kind == "원") {
+                let radius = st[0];
+                area = 3.14 * radius * radius;
+                dulle = 2 * 3.14 * radius;
+            } else if (kind == "직사각형") {
+                let width = st[0];
+                let height = st[1];
+                area = width * height;
+                dulle = 2 * (width + height);
+            } else if (kind == "직각삼각형") {
+                let base = st[0];
+                let height = st[1];
+                let hypo = st[2];
+                area = (base * height) / 2;
+                dulle = base + height + hypo;
+            }
+
+            res[i] = [kind, area, dulle];
+        }
+    </script>
+
+    <!-- 3. 출력부 -->
+    <table border="1">
+        <tr>
+            <th>도형명</th>
+            <th>가로</th>
+            <th>세로</th>
+            <th>빗변</th>
+            <th>넓이</th>
+            <th>둘레</th>
+        </tr>
+        <script>
+            for (const i in shape) {
+                let ttt = "<tr>";
+                ttt += "<td>" + res[i][0] + "</td>";
+
+                // 도형의 길이
+                for (let j = 0; j < shape[i].length; j++) {
+                    ttt += "<td>" + shape[i][j] + "</td>";
+                }
+
+                //빈칸 채우기
+                for (let j = shape[i].length; j < 3; j++) {
+                    ttt += "<td></td>";
+                }
+
+                // 넓이, 둘레 출력
+                ttt += "<td>" + res[i][1] + "</td>";
+                ttt += "<td>" + res[i][2] + "</td>";
+                ttt += "</tr>";
+
+                document.write(ttt);
+            }
+        </script>
+    </table>
+</body>
+
+</html>

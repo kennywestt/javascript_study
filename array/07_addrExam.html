@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>07_addrExam</title>
+    <style>
+        /* *{
+            margin: 0px;
+            padding: 0px;
+        } */
+         td{
+            text-align: center;
+         }
+    </style>
+</head>
+
+<body>
+    <h1>07_addrExam</h1>
+    <script>
+        //1. 입력부
+        let stud = [
+            ['원빈', 39, 67, 96],
+            ['투빈', 99, 67, 36],
+            ['현빈', 39, 57, 76, 94],
+            ['젤리빈', 99, 77, 56, 34],
+            ['장희빈', 69, 67, 66, 64],
+            ['텅빈', 69, 67, 66],
+        ]
+
+        let res = []
+        const kindTitle = ["일반", "특기생"]
+
+                        // 국, 수 , 영, 예  - 가중치
+        const specRate = [0.05,0.1,0.15,0.7]
+
+        for (const i in stud) {
+            const st = stud[i]
+            let kind = kindTitle[st.length-4]
+
+            let tot = 0
+            let avg = 0
+            for(let j=1; j<st.length; j++){
+                tot += st[j]
+                avg += st[j] * specRate[j-1]
+            }
+            if(kind=='일반'){
+            avg = tot / (st.length-1)
+            }
+
+            res[i] = [kind,tot,avg]
+            console.log(res[i])
+        }
+
+
+        //3. 출력부
+    </script>
+    <table border="">
+        <tr>
+            <td>구분</td>
+            <td>이름</td>
+            <td>국어</td>
+            <td>영어</td>
+            <td>수학</td>
+            <td>예체능</td>
+            <td>총점</td>
+            <td>평균</td>
+            <script>
+                for (const i in stud) {
+                    let ttt = "<tr>"
+                        ttt += "<td>"
+                        ttt += res[i][0]    // 구분
+                        ttt += "</td>"
+                    // ttt += "<td>"
+                    // ttt += res[i][1]    // 구분
+                    // ttt += "</td>"
+                    // ttt += "<td>"
+                    // ttt += res[i][2]    // 구분
+                    // ttt += "</td>"
+
+                    // 원시데이터 : 이름, 과목
+                    for (const dd of stud[i]) {
+                        ttt += "<td>"
+                        ttt += dd
+                        ttt += "</td>"
+                    }
+
+                    //일반 빈칸넣기
+                    if(res[i][0]=='일반'){
+                        ttt += "<td></td>"
+                    }
+
+                    //총점
+                    for (let j =1; j<res[i].length; j++) {
+                        ttt += "<td>"
+                        ttt += res[i][j]
+                        ttt += "</td>"
+                    }
+                    ttt += "</tr>"
+                    document.write(ttt)
+                }
+            </script>
+    </table>
+</body>
+
+</html>
