@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>12_keyPractice</title>
+</head>
+<body>
+    <h1>12_keyPractice</h1>
+    <script>
+        //1. 입력부
+        let dayDrink = [
+            {'date':'4/10', glass:[1,2,0],},
+            {'date':'4/11', glass:[2,0,1],},
+            {'date':'4/12', glass:[0,3,0],},
+            {'date':'4/13', glass:[1,1,1],},
+        ]
+
+        // let price1 = {'americano':2000,
+        //               'africano':2300,
+        //               'asiano':2700,}
+
+         let price = [2000, 2300, 2700]
+
+        //2. 연산부
+        for (const i in dayDrink) {
+            let st = dayDrink[i]
+            // let pt = price
+            
+            st.tot = 0
+            for(let j=0; j<st.glass.length; j++){
+                st.tot += st.glass[j]*price[j]
+            }
+        }
+
+    </script>
+
+    <table border="">
+        <tr>
+            <td>날짜</td>
+            <td>아메리카노</td>
+            <td>아프리카노</td>
+            <td>아시아노</td>
+            <td>합계</td>
+        </tr>
+        <script>
+            
+            //3. 출력부
+            for (const i in  dayDrink) {
+                let st = dayDrink[i]
+                let ttt = "<tr>"
+                ttt += "<td>"+st.date+"</td>"
+
+                for (const j of st.glass) {
+                    ttt += "<td>"+j+"</td>"
+                }
+                // for (const a of ta) {
+                //     ttt += "<td>"+st[a]+"</td>"
+                // }
+                ttt += "<td>"+st.tot+"</td>"
+                ttt += "</tr>"
+                document.write(ttt)
+            }
+            
+            /*
+            다음은 주문 메뉴의 배열이다
+            각 날짜의 주문 합계를 출력하세요
+            
+            주문번호 :
+            0 - 아메리카노 (2000)
+            1 - 아프리카노 (2300)
+            2 - 아시아노  (2700)
+            
+                    아메리카노 ,아프리카노, 아시아노
+            4/10 -     1       2        0
+            4/11 -     2       0        1
+            4/12 -     0       3        0
+            4/13 -     1       1        1
+            
+            
+            4/10 -    6600
+            4/11 -    6700
+            4/12 -    6900
+            4/13 -    7000
+            */
+            
+        </script>
+    </table>
+
+    <table border="">
+        <tr>
+            <td>날짜</td>
+            <td>합계</td>
+        </tr>
+        <script>
+            
+            //3. 출력부
+            for (const i in  dayDrink) {
+                let st = dayDrink[i]
+                let ttt = "<tr>"
+                ttt += "<td>"+st.date+"</td>"
+                ttt += "<td>"+st.tot+"</td>"
+                ttt += "</tr>"
+                document.write(ttt)
+            }
+            
+        </script>
+    </table>
+</body>
+</html>
+</body>
+</html>
