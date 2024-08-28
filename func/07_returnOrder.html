@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>07_returnOrder</title>
+</head>
+
+<body>
+    <h1>07_returnOrder</h1>
+
+    <table border="1">
+        <tr>
+            <td>날짜</td>
+            <td>아메리카노</td>
+            <td>아프리카노</td>
+            <td>아시아노</td>
+            <td>합계</td>
+        </tr>
+        <script>
+
+            // 주문 배열
+            let orders = [
+                inputOrder("4/10", 1, 2, 0),
+                inputOrder("4/11", 2, 0, 1),
+                inputOrder("4/12", 0, 3, 0),
+                inputOrder("4/13", 1, 1, 1),
+            ];
+
+            // 데이터 입력
+            function inputOrder(date, americano, africano, asiano) {
+                let sum = 0
+                return { date: date, americano: americano, africano: africano, asiano: asiano }
+            }
+
+
+            
+            // 행으로 출력
+            function trOrd(or) {
+                sum = or.americano * 2000 + or.africano * 2300 + or.asiano * 2700
+                let ttt = "<tr>"
+                ttt += "<td>" + or.date + "</td>"
+                ttt += "<td>" + or.americano + "</td>"
+                ttt += "<td>" + or.africano + "</td>"
+                ttt += "<td>" + or.asiano + "</td>"
+                ttt += "<td>" + sum + "</td>"
+                ttt += "</tr>"
+                document.write(ttt)
+            }
+
+            // 주문 정보 출력
+            for (const or of orders) {
+                trOrd(or)
+            }
+            // 영수증 출력 함수
+            function receipt() {
+                for (const or of orders) {
+                    let tot = or.americano * 2000 + or.africano * 2300 + or.asiano * 2700
+                    document.write(or.date + " - " + tot + "원<br>")
+                }
+            }
+
+        </script>
+
+    </table>
+
+    <script>
+        // 영수증 출력
+        document.write("<hr>", "영수증", "<br>")
+        receipt()
+    </script>
+</body>
+
+</html>

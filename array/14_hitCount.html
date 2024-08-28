@@ -3,71 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>14_hitCount</title>
+    <title>15_keyWordCnt</title>
 </head>
 <body>
-    <h1>14_hitCount</h1>
+    <h1>15_keyWordCnt</h1>
     <script>
-        const ori = [32,14,5,77,32,5,26,8,32,14,5,26,39]
-        let res = {}
-        for (const oo of ori) {
-            document.write(oo,"<br>")
-            if(oo in res){
-                res[oo]++
-            }else{
-                res[oo] = 1
-            }
-        }
-        document.write("<hr>")
-        for (const k in res) {
-            document.write(k, " : ", res[k],"<br>")
-        }
+        let lyrics = "Ay ay ay ay ay 거울 속에 내 표정 봐 봐" +
+" 느낌 So good 기다려온 D-day 연습했던 손든 인사도 그대로 하면 돼"+
+" Hairstyle check 하고 한 번 Turn around 발걸음은 매일 걷던 그 길로" +
+" 계획은 완벽 빨리 말 걸어보고 싶어, Hey Woo 문 앞에서 만날까, Yeh " +
+" (셋, 둘, 하나) 첫 만남은 너무 어려워 계획대로 되는 게 없어서 " +
+" 첫 만남은 너무 어려워 내 이름은 말야 만득이 Hey, 안녕, 첫 마디를 건넬 때" +
+" 주변 소린 Canceled 네 말소리는 만날까 Playlist Yeh, 질문은 만나서 나의 용기, 알려줘 너의" +
+" 이름이 뭐야? 만득이 와 내 거리는 세 걸음 남았어, Yeh (셋, 둘, 하나) 첫 만남은 너무 어려워" +
+" 계획대로 되는 게 없어서 첫 만남은 너무 어려워 내 이름은 만득이 순간,"+
+" Feels so wonderful 조금은 뚝딱거려도 어색한 인사까지도 너와 나의 첫 만남 "+
+" 우리의 사이 Beautiful 내일도 내일모레도 기억해, 영원히 반짝일 순간 Wait wait!"+
+" Na na na- 이렇게 만나서 반가워 내일 또 봐 안녕"
+    
+    const mwm = [",","(",")","!","-","?"]
 
-        // 뉴스를 발췌하여 각 단어가 몇번 등장하는지 출력하세요
-        // 무의미한 특수기호 모두 제거 할 듯
-
-        const news = [
-        "과학기술정보통신부는 26일 대통령실 국가과학기술자문회의 심의회의에서 이같은 내용이"+
-        "담긴 ‘대한민국 과학기술 주권 청사진 제1차 국가전략기술 육성 기본계획 2024 2028을"+
-        "발표했다. 정부는 2022년 윤석열 대통령 주재 국가과학기술자문회의 전원회의를 통해"+
-        "공급망·신사업·외교안보 측면에서 국가가 반드시 확보해야 할 12대 국가전략기술 및 50개"+
-        "세부 중점기술을 선정했는데 이번 1차 기본계획은 12대 전략기술 육성을 위한 범부처 5개년"+
-        "계획을 구체화한 것이다. 특히 이번 1차 기본계획은 전략기술 특별법 제정을 계기로 수립한"+
-        "것이다. 구체적으로 12대 분야 R&D는 민간 수요 중심으로 향후 5년간 30조원 이상의 자금이"+
-        "지원된다. 12대 분야는 반도체 디스플레이 2차 전지 모빌리티 차세대 원자력, 첨단바이오"
-        ]
-
-        let paper = {}
-
-        const mwm = [",","(",")","!","-","?","·"]
         for (const mm of mwm) {
-            let ttts = news.split(mm)
-            news = ttts.join("")
-            // document.write(lyrics, "<br>")
-
+            let ttts = lyrics.split(mm)
+            lyrics = ttts.join("")
+                
         }
+        let ttts = lyrics.split("  ")
+        lyrics = ttts.join(" ")
 
-        for (const tt of news) {
-            // if("만남은"==tt){
-            if(sample.includes(tt)){
-                cnt ++
+        //document.write(lyrics,"<br/>")
+        let arr = lyrics.split(" ")
+        //console.log(arr)
+
+        let res = {}
+        for (const word of arr) {
+            document.write(word,"<br/>")
+            if(word in res){ // 'ay' in {'ay':1}  : true
+                res[word]++   //  res['ay']++   ==> {'ay':2}
+            }else{              // 'ay' in {}  : false
+                res[word] = 1 //추가    //{'ay':1}
             }
-            document.write(tt," " , sample.includes(tt),"<br>")
+            
         }
-        document.write(cnt,"<br><br><hr>")
+        document.write("<hr/>")
+        for (const k in res) {
+            document.write(k ," : " ,res[k],"<br/>")
+        }
+        document.write("<hr/>")
 
-        for(const pp of news){
-            document.write(pp,"<br>")
-            if(pp in paper){
-                paper[pp]++
-            }else{
-                paper[pp] = 1
-            }
+
+
+        // console.log("res", res)
+
+        // let kk = {}
+        kk = Object.keys(res).sort();
+        console.log(kk)
+        for(const k of kk){
+            document.write(k, " : ", res[k], "<br>")
         }
 
-        for(const j in pp){
-            document.write(j, " : ", paper[pp])
-        }
     </script>
 </body>
 </html>
