@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>11_recuriveCall</title>
+</head>
+
+<body>
+    <h1>11_recuriveCall</h1>
+    <script>
+        let pre = ""
+        function fn(nn) {
+            let myPre = pre
+            pre += "&nbsp&nbsp&nbsp&nbsp"
+            let res = nn
+
+            document.write(myPre, "fn 시작 ", nn, " , ", res, " -------<br>")
+            if (nn > 0) {   //정의된 함수는 1개 호출되는 함수는 4개
+                res += fn(nn - 1) //재귀 호출    증감: -1
+            }
+            document.write(myPre, "fn 끝 ", nn, " , ", res, " -------<br>")
+            return res
+        }
+        let rr = fn(3)   // 초기값 : 3
+        document.write("rr : ", rr, "<br>")
+
+        document.write("<hr>")
+
+        /*
+            0 부터 14의 짝수의 합을
+            재귀함수를 써서 만들어라
+        */
+
+        function down(k) {
+            let r = k
+            
+            if (k > 0) {
+                r += down(k-2)
+            }
+            document.write(k, " , ", r, "<br>")
+            return r
+        }
+
+
+        let tot = down(14)
+        document.write("0 부터 14의 짝수의 합 : ",tot, "<br>")
+
+        // function holeDown(t) {
+        //     let p = t
+        //     document.write(t, ", ",p, "<br>")
+        //     if(t > 0) {
+        //         p += holeDown((t-1)-1)
+        //     }
+        //     document.write(t, ", ",p, "<br>")
+        //     return p
+        // }
+
+        // let tot1 = holeDown(13)
+        // document.write("0 부터 13의 짝수의 합 : ",tot1, "<br>")
+
+
+    </script>
+</body>
+
+</html>
