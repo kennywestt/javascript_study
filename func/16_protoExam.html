@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>16_protoExam</title>
+</head>
+
+<body>
+    <h1>16_protoExam</h1>
+    <script>
+        Stud = function (name, ...jum) {
+            this.name = name
+            this.jum = jum
+
+            // this.tot = 0
+            // for (const j of this.jum){
+            //     this.tot+= j
+            // }
+
+            this.calc = function () {
+                this.tot = 0
+                for (const j of this.jum) {
+                    this.tot += j
+                }
+                this.avg = this.tot / this.jum.length
+            }
+
+            this.calc() //생성시 함수 호출
+
+            this.toString = function () {
+                return this.name + "," + this.jum + "," + this.tot + "," + this.avg
+            }
+
+            this.tr = function () {
+                let ttt = "<tr>"
+                ttt += "<td>" + this.name + "</td>"
+                for (const j of this.jum) {
+                    ttt += "<td>" + j + "</td>"
+                }
+                ttt += "<td>" + this.tot + "</td>"
+                ttt += "<td>" + this.avg + "</td>"
+                ttt += "</tr>"
+
+                document.write(ttt)
+            }
+        }
+
+        // let st1 = new Stud("장동건", 78, 79, 72)
+        // document.write(st1)
+        let studs = [
+            new Stud("장동건", 78, 79, 72),
+            new Stud("장서건", 58, 59, 52),
+            new Stud("장중건", 98, 99, 92),
+            new Stud("장남건", 68, 69, 62),
+            new Stud("북두신건", 88, 89, 82),
+        ]
+
+        for (const st of studs) {
+            document.write(st, "<br>")
+        }
+    </script>
+
+    <table border="">
+        <tr>
+            <td>이름</td>
+            <td>국어</td>
+            <td>영어</td>
+            <td>수학</td>
+            <td>총점</td>
+            <td>평균</td>
+        </tr>
+        <script>
+            for (const st of studs) {
+                st.tr()
+            }
+            
+
+        </script>
+    </table>
+
+    <script>
+        document.write("<hr>")
+        /*
+        직사각형 prototype을 정의하고
+        넓이, 둘레를 table로 출력하세요
+        */
+    
+        Squa = function (width, height) {
+            this.width = width;
+            this.height = height;
+    
+            this.calc = function () {
+                this.area = this.width * this.height;
+                this.border = (this.width + this.height) * 2;
+            };
+    
+            this.toString = function () {
+                return this.area + "," + this.border;
+            };
+    
+            this.tr = function () {
+                let ttt = "<tr>";
+                ttt += "<td>" + this.area + "</td>";
+                ttt += "<td>" + this.border + "</td>";
+                ttt += "</tr>";
+    
+                document.write(ttt);
+            };
+        };
+    
+        let squares = [
+            new Squa(2, 4),
+            new Squa(4, 5),
+        ];
+    
+        // 각 객체에 대해 넓이와 둘레를 계산
+        for (const st of squares) {
+            st.calc();  // 넓이와 둘레를 계산
+            // document.write(st, "<br>");
+            console.log(st);
+        }
+    </script>
+    
+    <table border="">
+        <tr>
+            <td>넓이</td>
+            <td>둘레</td>
+        </tr>
+        <script>
+            for (const st of squares) {
+                st.tr();  // 테이블에 각 직사각형의 넓이와 둘레를 출력
+            }
+            
+        </script>
+    </table>
+    </body>
+    
+    </html>
